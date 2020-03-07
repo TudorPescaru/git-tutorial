@@ -27,13 +27,13 @@ int main(int argc, char **argv)
 	if (argc == 1)
 		system("man git");
 	else {
-		cmd = malloc(7 + strlen(argv[argc]));
+		cmd = malloc(7 + strlen(argv[argc - 1]));
 		if (!cmd) {
 			fprintf(stderr, "not enought memory to create command!\n");
 			exit(-1);
 		}
 		strcpy(cmd, "man git-");
-		strcat(cmd, argv[argc]);
+		strcat(cmd, argv[argc - 1]);
 		system(cmd);
 	}
 
